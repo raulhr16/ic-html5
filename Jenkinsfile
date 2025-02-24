@@ -13,18 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/javierasping/taller2_ic-html5.git'
-            }
-        }
-       
-        stage('Change Repositories to HTTPS') {
-            steps {
-                script {
-                    sh """
-                    sed -i 's/http:/https:/g' /etc/apt/sources.list
-                    apt update
-                    """
-                }
+                git branch: 'master', url: 'https://github.com/raulhr16/ic-html5'
             }
         }
        
@@ -63,7 +52,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'surge ./_build/ javierasping.surge.sh --token $TOKEN'
+                    sh 'surge ./_build/ raulhr.surge.sh --token $TOKEN'
                 }
             }
         }
