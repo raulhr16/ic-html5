@@ -28,7 +28,7 @@ pipeline {
         stage('Actualizar npm') {
             steps {
                 script {
-                    sh 'npm update'
+                    sh 'curl -I https://registry.npmjs.org/'
                 }
             }
         } 
