@@ -16,7 +16,7 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/raulhr16/ic-html5'
             }
         }
-
+    }
     stage('Install npm') {
         steps {
             script {
@@ -31,8 +31,7 @@ pipeline {
                 sh 'sudo npm update'
             }
         }
-    
-        
+    }
     stage('Install Surge') {
         steps {
             script {
