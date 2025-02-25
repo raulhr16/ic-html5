@@ -20,7 +20,7 @@ pipeline {
         stage('Install npm') {
             steps {
                 script {
-                    sh 'apt update -y && apt install npm -y'
+                    sh 'apt update -y && apt install curl npm -y'
                 }
             }
         }
