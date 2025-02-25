@@ -28,7 +28,7 @@ pipeline {
         stage('Actualizar npm') {
             steps {
                 script {
-                    sh 'sudo npm update'
+                    sh 'npm update'
                 }
             }
         } 
