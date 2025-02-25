@@ -17,10 +17,10 @@ pipeline {
             }
         }
 
-    stage('Install Pip') {
+    stage('Install npm') {
         steps {
             script {
-                sh 'apt update -y && apt install pip default-jre -y'
+                sh 'apt update -y && apt install npm -y'
             }
         }
     }
