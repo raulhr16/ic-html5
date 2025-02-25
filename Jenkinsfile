@@ -24,6 +24,14 @@ pipeline {
             }
         }
     }
+
+    stage('Actualizar npm') {
+        steps {
+            script {
+                sh 'npm update'
+            }
+        }
+    
         
     stage('Install Surge') {
         steps {
