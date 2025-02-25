@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'josedom24/debian-npm'
+            image 'raulhr16/surge:v1'
             args '-u root:root'
         }
     }
@@ -14,30 +14,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master', url: 'https://github.com/raulhr16/ic-html5'
-            }
-        }
-
-        stage('Install npm') {
-            steps {
-                script {
-                    sh 'apt update -y && apt install curl npm -y'
-                }
-            }
-        }
-
-        stage('Actualizar npm') {
-            steps {
-                script {
-                    sh 'curl -I https://registry.npmjs.org/'
-                }
-            }
-        } 
-
-        stage('Install Surge') {
-            steps {
-                script {
-                    sh 'npm install -g surge'
-                }
             }
         }
        
