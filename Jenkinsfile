@@ -20,7 +20,7 @@ pipeline {
         stage('Install Pip') {
             steps {
                 script {
-                    sh 'apt update -y && apt install pipx default-jre -y'
+                    sh 'apt update -y && apt install pip python3-venv default-jre -y'
                 }
             }
         }
@@ -28,7 +28,11 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'pipx install html5validator'
+                    sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
+                        pip install --no-cache-dir html5validator
+                    '''
                 }
             }
         }
