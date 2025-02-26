@@ -20,7 +20,7 @@ pipeline {
         stage('Install Pip') {
             steps {
                 script {
-                    sh 'apt update -y && apt install pip default-jre -y'
+                    sh 'apt update -y && apt install pipx default-jre -y'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'pip install html5validator'
+                    sh 'pipx install html5validator'
                 }
             }
         }
